@@ -9,16 +9,16 @@ import (
 )
 
 type AppController struct {
-	service services.AppService
+	Service services.AppService
 }
 
 func (controller AppController) InitRoutes(engine *gin.RouterGroup) {
 	engine.GET("/message", func(context *gin.Context) {
-		message := controller.service.GetMessage()
+		message := controller.Service.GetMessage()
 		context.JSON(http.StatusOK, gin.H{"message": message})
 	})
 }
 
 func (controller AppController) InitDependencies(dependencies ...interface{}) {
-	utils.InitDependencies(&controller, dependencies...)
+	utils.InitDependencies(&controller)
 }

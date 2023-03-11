@@ -4,5 +4,5 @@ type AppService struct {
 }
 
 func (service AppService) GetMessage() string {
-	return "message from service"
+	return "MESSAGE FROM SERVICE"
 }
